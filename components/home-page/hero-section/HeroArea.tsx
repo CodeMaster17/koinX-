@@ -65,6 +65,7 @@ const HeroArea: React.FC = () => {
       }
 
 
+
       // setting tax rate sentence
       if (annualIncome === '$0 - $18,200') {
         setRateSentence("0%")
