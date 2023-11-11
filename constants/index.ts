@@ -30,6 +30,12 @@ type AnnualIncome={
   incomeRange:string,
   incomeId:number
 }
+type Tax={
+  id:number,
+  incomeRange:string,
+  taxRate:string,
+  
+}
 
 type Country={
   id:number,
@@ -54,6 +60,23 @@ export const annualIncomeData : AnnualIncome[]=[
  { id:5,
   incomeRange:'$180,001+',
   incomeId:190000},
+]
+export const taxData : Tax[]=[
+ { id:1,
+  incomeRange:'$0 - $18,200',
+  taxRate:"0%"},
+ { id:2,
+  incomeRange:'$18,201 - $45,000',
+   taxRate:"Nil + 19% of the excess over $18,200"},
+ { id:3,
+  incomeRange:'$45,001 - $120,000',
+   taxRate:"$5,092 + 32.5% of the excess over $45,000"},
+ { id:4,
+  incomeRange:'$120,001 - $180,000',
+   taxRate:"$29,467 + 37% of the excess over $120,000"},
+ { id:5,
+  incomeRange:'$180,001+',
+   taxRate:"$51,667 + 45% of the excess over $180,000"},
 ]
 
 
@@ -91,7 +114,7 @@ export const financialYearData:FinancialYear[]=[
   },
 ]
 
-export const country:Country[]=[
+export const countryData:Country[]=[
   {
     id:1,
     name : "Australia",

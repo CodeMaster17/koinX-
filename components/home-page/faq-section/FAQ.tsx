@@ -4,8 +4,8 @@ import React from 'react'
 
 const FAQ = () => {
     return (
-        <div className="w-full  bg-white-100 mt-8 lg:flex lg:items-start lg:p-8">
-            <div className="w-[90%]  lg:rounded-lg lg:border-[1px] border-gray-300 mx-auto  lg:p-8" >
+        <div className="w-full  mt-8 lg:flex lg:items-start lg:p-8">
+            <div className="w-[90%] bg-white-100   lg:rounded-lg  border-gray-300 mx-auto  lg:p-8" >
                 <h1 className="text-xl font-bold leading-5" >
                     Frequently Asked Questions
                 </h1>

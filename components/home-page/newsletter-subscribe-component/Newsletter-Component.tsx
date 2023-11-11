@@ -3,9 +3,9 @@ import React from 'react'
 
 const NewsletterComponent = () => {
   return (
-    <div className="   w-full p-8 border-2 ">
+    <div className="bg-white-100    w-full p-8  ">
 
-      <div className=" w-[80%] mt-12 mb-12 rounded-lg mx-auto gap-8 bg-blue flex justify-center items-center ">
+      <div className=" w-[80%]  mt-12 mb-12 rounded-lg mx-auto gap-8 bg-blue flex justify-center items-center ">
         <Image
           src="/assets/subscribe-to-newsletter.svg"
           alt="subscribe-img"

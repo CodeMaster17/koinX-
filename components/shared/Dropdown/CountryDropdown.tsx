@@ -1,22 +1,32 @@
+import { countryData } from '@/constants'
+import { Listbox } from '@headlessui/react'
 import React from 'react'
-import { Listbox } from "@headlessui/react";
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+interface DropdownProps {
+    country:string,
+    setCountry:(financialYear:string)=>void
+  }
 
-const Dropdown = ({}) => {
+const CountryDropdown = ({country, setCountry}:DropdownProps) => {
   return (
-    <Listbox value={financialYear} onChange={setFinancialYear}>
-    <div className="relative mt-1 lg:w-full">
-      <Listbox.Button className="relative w-full cursor-default  bg-white py-2 pl-3 pr-10 text-left border-2 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm bg-white-300">
-        <span className=" w-full  text-base ">{financialYear}</span>
+    <>
+      <label htmlFor="financial-year" className="text-sm">
+                Country
+              </label>
+    <Listbox value={country} onChange={setCountry}>
+    <div className="relative mt-1 lg:w-full bg-white">
+      <Listbox.Button className="relative w-full cursor-default  bg-white py-4 rounded-sm pl-3 pr-10 text-left  focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm bg-white-300">
+        <span className=" w-full  text-base ">{country}</span>
         <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-          {/* <ChevronUpDownIcon
+          <ChevronUpDownIcon
     className="h-5 w-5 text-gray-400"
     aria-hidden="true"
-  /> */}
+  />
         </span>
       </Listbox.Button>
 
       <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-        {financialYearData.map((item, personIdx) => (
+        {countryData.map((item, personIdx) => (
           <Listbox.Option
             key={personIdx}
             className={({ active }) =>
@@ -26,7 +36,7 @@ const Dropdown = ({}) => {
                   : "text-gray-900"
               }`
             }
-            value={item.year}
+            value={item.value}
           >
             {({ selected }) => (
               <>
@@ -35,14 +45,14 @@ const Dropdown = ({}) => {
                     selected ? "font-medium" : "font-normal"
                   }`}
                 >
-                  {item.year}
+                  {item.name}
                 </span>
                 {selected ? (
-                  <span className="absolute left-0 flex items-center pl-3 text-amber-600">
-                    {/* <CheckIcon
+                  <span className="absolute top-2 left-0 flex items-center pl-3 text-amber-600">
+                    <CheckIcon
                       className="h-5 w-5"
                       aria-hidden="true"
-                    /> */}
+                    />
                   </span>
                 ) : null}
               </>
@@ -52,7 +62,8 @@ const Dropdown = ({}) => {
       </Listbox.Options>
     </div>
   </Listbox>
+  </>
   )
 }
 
-export default Dropdown
+export default CountryDropdown

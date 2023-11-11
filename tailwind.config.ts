@@ -55,6 +55,7 @@ module.exports = {
       },
       colors: {
         gray: {
+          50:"#DEDFE2",
           100: "#0F1629",
           200:"#3E424A",
           300:"#768396",
@@ -67,10 +68,13 @@ module.exports = {
           400:"rgba(255, 255, 255, 0.65);"
         },
         lightBlue: "#EDF2FF",
+        darkBlue:'#0141CF',
         orange: "#FFB800",
         black: "#000000",
+        green:'#0FBA83'
       },
       borderRadius: {
+        xsm:"4px",
         sm: "8px",
         md: "12px",
         lg: "16px",
